@@ -1,0 +1,19 @@
+function listFiles(){
+
+  var googleSheet = SpreadsheetApp.getActiveSpreadsheet();
+  var shName = googleSheet.getSheetByName("sheet1");
+
+  var ui = SpreadsheetApp.getUi();
+
+  const id = '1y87AkqGqr5xK0KMnobqZQh81iTQBWTcT';
+  const folder = DriveApp.getFolderById(id);
+  const files = folder.getFiles();
+  while(files.hasNext()){
+    const file = files.next();
+    var disponible = shName.getLastRow()+1; //pour identifier la ligne disponible
+    shName.getRange(disponible,1).setValue(file.getName());
+    shName.getRange(disponible,2).setValue(file.getUrl());
+    shName.getRange(disponible,3).setValue(file.getDownloadUrl());
+    Logger.log(file.getUrl());
+  }
+}
