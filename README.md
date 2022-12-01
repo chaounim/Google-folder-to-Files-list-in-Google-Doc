@@ -1,5 +1,5 @@
 # Google-folder-to-Files-list-in-Google-Doc
-List all the files in the specified google drive folder into a google doc file
+List all the files in the specified google drive folder into a google doc file USING APPSCRIPT
 
 you just need to mofify the following information:
 
